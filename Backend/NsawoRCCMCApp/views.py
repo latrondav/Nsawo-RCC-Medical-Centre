@@ -1,4 +1,4 @@
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.db import transaction
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -39,22 +39,22 @@ def SendMessage(request):
             "Thanking you,\nNsawo RCC Medical Centre System Demon."
         )
 
-        # Send emails
-        send_mail(
+        # Create EmailMessage instances
+        sender_email = EmailMessage(
             subject=contact_subject,
-            message=sender_message,
-            from_email=settings.EMAIL_USER,
-            recipient_list=[contact_email],
-            fail_silently=False  # Change to False during debugging
+            body=sender_message,
+            from_email=settings.EMAIL_HOST_USER,
+            to=[contact_email]
         )
+        sender_email.send(fail_silently=False)
 
-        send_mail(
+        admin_email = EmailMessage(
             subject=contact_subject,
-            message=admin_message,
-            from_email=settings.EMAIL_USER,
-            recipient_list=[settings.ADMIN_EMAIL],
-            fail_silently=False  # Change to False during debugging
+            body=admin_message,
+            from_email=settings.EMAIL_HOST_USER,
+            to=[settings.ADMIN_EMAIL]
         )
+        admin_email.send(fail_silently=False)
 
         return JsonResponse({
             'message': 'Message Sent. We Will Get Back To You As Soon As Possible. '
@@ -62,4 +62,3 @@ def SendMessage(request):
         })
     else:
         return JsonResponse({'message': 'Method not allowed'}, status=405)
-

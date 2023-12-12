@@ -37,14 +37,14 @@
   <header id="header">
     <div class="container d-flex align-items-center">
 
-      <a href="home.html" class="logo me-auto">
+      <a href="index.html" class="logo me-auto">
         <h1 class="logo me-auto"><img src="assets/img/logo.png" alt="nrccmc-logo"> Nsawo RCC Medical Centre <img src="assets/img/rotary.jpg" alt="rotary-logo"></h1>
       </a>
       <!-- Uncomment below if you prefer to use an image logo -->
       
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="home.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
           <li><a class="nav-link scrollto" href="about.html">About Us</a></li>
           <li class="dropdown">
             <a href="#"><span>Medical Care</span> <i class="bi bi-chevron-down"></i></a>
@@ -111,7 +111,7 @@
             </div>
 
             <div class="col-lg-6">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <form id="contactForm" class="php-email-form">
                 <div class="row">
                     <div class="col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
@@ -125,11 +125,6 @@
                 </div>
                 <div class="form-group mt-3">
                     <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
-                </div>
-                <div class="my-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
                 </div>
                 <div class="text-center"><button type="submit">Send Message</button></div>
                 </form>
@@ -231,7 +226,7 @@
           <div class="col-lg-4 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="home.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="about.html">About Us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="team.html">Our Team</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Us</a></li>
@@ -284,6 +279,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/sendmessage.js"></script>
 
 </body>
 
