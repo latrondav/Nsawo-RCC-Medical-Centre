@@ -27,13 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => {
       if (response.ok) {
-          // Handle success - show a success message to the user
-          console.log(response);
-        alert('Message sent successfully!');
+        // Handle success - show a success message to the user
+        alert('Message Sent, We Will Get Back To You As Soon As Possible, Thank You For Contacting Nsawo RCC Medical Centre.');
         contactForm.reset();
       } else {
         // Handle error - show an error message to the user
-        alert('Failed to send message. Please try again later.');
+        alert('Failed To Send Message. Please Try Again Later.');
       }
     })
     .catch(error => {
